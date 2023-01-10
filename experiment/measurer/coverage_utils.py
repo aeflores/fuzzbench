@@ -227,6 +227,7 @@ def merge_profdata_files(src_files, dst_file):
     command = ['llvm-profdata', 'merge', '-sparse']
     command.extend(src_files)
     command.extend(['-o', dst_file])
+    logger.info(" ".join(command))
     result = new_process.execute(command, expect_zero=False)
     return result
 
